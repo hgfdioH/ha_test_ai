@@ -1,0 +1,69 @@
+progression_cycle_piscine:
+  module: sensors_piscine
+  class: TauxFonctionnementPiscineApp
+
+taux_solaire_piscine:
+  module: sensors_piscine
+  class: TauxSolairePiscineApp
+
+historique_taux_solaire_piscine:
+  module: sensors_piscine
+  class: HistoriqueTauxSolairePiscineApp
+
+puissance_piscine:
+  module: sensors_piscine
+  class: PuissancePiscineApp
+
+temperature_filtree_piscine:
+  module: sensors_piscine
+  class: TemperatureFiltreePiscineApp
+
+bouton_piscine:
+  module: bouton_piscine
+  class: MultipleClickSwitch
+
+taux_solaire_smart:
+  module: sensors_smart
+  class: TauxSolaireSmartApp
+
+puissances_solaires:
+  module: puissances_solaires
+  class: PuissanceSolairePiscineApp
+
+# =============================================================================
+# Apps de gestion énergétique Bellman
+# =============================================================================
+# -----------------------------------------------------------------------------
+# App 1 — Configuration + prévisions solaires
+# -----------------------------------------------------------------------------
+energy_config:
+  module: automatisation_bellman.energy_config
+  class: EnergyConfig
+
+# -----------------------------------------------------------------------------
+# App 2 — Balayage rétrograde de Bellman
+# -----------------------------------------------------------------------------
+policy_creator:
+  module: automatisation_bellman.policy_creator
+  class: PolicyCreator
+
+# -----------------------------------------------------------------------------
+# App 3 — Lecture de la politique et commandes HA
+# -----------------------------------------------------------------------------
+policy_reader:
+  module: automatisation_bellman.policy_reader
+  class: PolicyReader
+
+# -----------------------------------------------------------------------------
+# App 4 — Exportation visuelle de la politique
+# -----------------------------------------------------------------------------
+planning_svg:
+  module: automatisation_bellman.planning_svg
+  class: PlanningSVG
+
+# -----------------------------------------------------------------------------
+# App 5 — Passe le stock à la valeur maximale lorsque le thermostat déclenche
+# -----------------------------------------------------------------------------
+stock_updater:
+  module: stock_updater
+  class: StockUpdater
